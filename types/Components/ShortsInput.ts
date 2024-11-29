@@ -1,6 +1,6 @@
 export interface IShortsInputProps {
     placeholder?: string
-    error?: string
+    errorMessage?: string
     readOnly?: boolean
     modelValue: string
 }

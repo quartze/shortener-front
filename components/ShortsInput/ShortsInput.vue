@@ -1,32 +1,30 @@
 <template>
   <label
     for="short_url_input"
-    :class="
-      'group block w-full px-6 py-4 min-w-96 bg-white/90 border-2 backdrop-blur-2xl relative' +
-      (error ? ' border-red-500' : ' border-primary-300')
-    ">
+    :class="{ 'group block w-full px-6  py-4 min-w-96 bg-white/90 border-2 backdrop-blur-2xl relative': true,
+    'border-red-500': errorMessage, 'border-primary-300' : !errorMessage}">
     <input
       type="text"
       id="short_url_input"
       name="short_url_input"
       :readonly="readOnly"
-      :aria-invalid="!!error"
+      :aria-invalid="!!errorMessage"
       :value="modelValue"
       @input="onUpdateInput"
       :placeholder="placeholder"
       class="bg-transparent w-full h-full block focus-visible:outline-none" />
     <small
-      v-if="error"
+      v-if="errorMessage"
       className="group-hover:opacity-0 z-10 bg-white group-focus-within:opacity-0 transition-opacity pointer-events-none absolute text-red-500 right-4 bgwhite p-2 top-0 bottom-0 flex items-center"
-      >{{ error }}</small
+      >{{ errorMessage }}</small
     >
   </label>
 </template>
 
-<script lang="ts" setup>
+<script setup lang="ts">
   import { type IShortsInputProps } from "~/types/Components/ShortsInput";
 
-  const { error, modelValue, readOnly, placeholder } = defineProps<IShortsInputProps>();
+  const { errorMessage, modelValue, readOnly, placeholder } = defineProps<IShortsInputProps>();
 
   const emit = defineEmits(["update:modelValue"]);
 

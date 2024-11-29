@@ -2,9 +2,9 @@
   <header
     role="banner"
     class="lg:h-[800px] h-auto p-6 lg:p-0 overflow-hidden flex items-center justify-center text-center flex-col">
-    <div class="font-sans text-4xl font-bold">
+    <h2 class="font-sans text-4xl font-bold">
       <strong>CUT</strong> your address URL to <strong>SHRTL</strong> version!
-    </div>
+    </h2>
     <ShortsInputShortsWrapper
       class="mt-10 lg:w-[800px] flex flex-col lg:flex-row items-center gap-4" />
     <div

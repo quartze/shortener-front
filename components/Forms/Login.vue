@@ -1,7 +1,7 @@
 <template>
   <form @submit.prevent class="min-w-96 p-6 my-4 bg-white border-2 border-zinc-200">
     <div class="my-4 font-bold text-center">Login</div>
-    <small aria-live="polite" v-if="errorMessage" class="block max-w-96 my-4 text-red-500">{{
+    <small aria-live="polite" v-if="errorMessage" class="error block max-w-96 my-4 text-red-500">{{
       errorMessage
     }}</small>
     <Input id="email" name="email" autocomplete="email" required v-model="email" label="Email" type="email" />
@@ -14,7 +14,7 @@
     </Button>
     <small class="block text-xs text-center mt-6 font-light"
       >You don't have an account? <br />
-      <NuxtLink to="/auth/register">Register new account for free!</NuxtLink></small
+      <NuxtLink title="Register new account" to="/auth/register" class="move-to-account">Register new account for free!</NuxtLink></small
     >
   </form>
 </template>
@@ -42,6 +42,7 @@
 
     if (!email.value || !password.value) {
       errorMessage.value = "All fields are required";
+      isFetching.value = false;
       return;
     }
 

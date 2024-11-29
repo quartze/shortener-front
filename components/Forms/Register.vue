@@ -1,7 +1,7 @@
 <template>
   <form @submit.prevent class="min-w-96 p-6 my-4 bg-white border-2 border-zinc-200">
     <div class="my-4 font-bold text-center">Register</div>
-    <small aria-live="polite" v-if="errorMessage" class="block max-w-96 my-4 text-red-500">{{
+    <small aria-live="polite" v-if="errorMessage" class="error block max-w-96 my-4 text-red-500">{{
       errorMessage
     }}</small>
     <Input id="email" name="email" autocomplete="email" required v-model="email" label="Email" type="email" />
@@ -41,10 +41,12 @@
   const registerMe = async () => {
     if (!email.value || !password.value || !rePassword.value) {
       errorMessage.value = "All fields are required";
+      isFetching.value = false;
       return;
     }
     if (password.value !== rePassword.value) {
       errorMessage.value = "Passwords do not match";
+      isFetching.value = false;
       return;
     }
 

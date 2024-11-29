@@ -6,7 +6,7 @@
         <Icon class="text-4xl text-primary-500" :icon="icon" />
       </div>
       <div class="col-span-5 font-bold text-zinc-900 text-left">
-        <h2 class="text-sm">{{ title }}</h2>
+        <h3 class="text-sm">{{ title }}</h3>
         <p class="text-xs font-light mt-1">{{ content }}</p>
       </div>
     </div>

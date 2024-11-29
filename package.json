@@ -6,6 +6,8 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
+    "test": "vitest",
+    "test-ui": "vitest --ui",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
@@ -21,9 +23,11 @@
   "devDependencies": {
     "@iconify/vue": "^4.1.2",
     "@types/axios": "^0.14.4",
+    "@vitest/ui": "^2.1.6",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.15",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.6"
   }
 }
