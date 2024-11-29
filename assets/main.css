@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply font-geistMono bg-white text-zinc-900;
+}
+
+a {
+    @apply transition-colors text-zinc-900 hover:underline hover:text-primary-500;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.2s ease-in-out;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+}
+
+.fade-enter-to,
+.fade-leave-from {
+    opacity: 1;
+}
